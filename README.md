@@ -1,2 +1,3 @@
 # nickRepo
-PSU DIGIT 100 Portfolio
+PSU DIGIT Portfolio
+Currently contains website and various project created for DIGIT 100
