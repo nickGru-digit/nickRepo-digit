@@ -1,25 +1,31 @@
-# **Punctuation Marks in HTML and XML (a short guide)**
-## **Tag Marks**
+# **Punctuation Marks in XML (a short guide)**
+## **~~~Tag Marks~~~**
 ### *Angle Brackets (< and >)*
-Used to open and close tags.
+Used to mark the beginning and end of tags
 ### *Forward Slash (/)*
-Used to close an element.\
+Used to close a tag\
 Examples:
-``` json
-{
-  <tag>Content<tag/>
-  <self-closing-tag/>
-}
+```xml
+<tag>Content<tag/>
+<self-closing-tag/>
 ``` 
-## **Attribute Marks**
+## **~~~Attribute Marks~~~**
 ### *Equal Sign (=)*
-Used to 
+Used to assign attributes values
 ### *Quotation Marks ("")*
-Used to \
+Used to denote the value of an attribute\
 Examples:
-``` json
-{
-  <tag element="information"><tag/>
-  <self-closing-tag id="identifier"/>
-}
+```xml
+<tag element="information"><tag/>
+<self-closing-tag id="identifier"/>
 ```
+## **~~~Symbols in Content~~~**
+If you want to use any of these symbols in the content of an element, the syntax is pretty simple:
+```xml
+&amp; (for &)
+&lt; (for <)
+&gt; (for >)
+&quot; (for ")
+&apos; (for ')
+```
+Other symbols should work fine in text content, but all punctuation aside from underscores, hyphens, and periods are prohibited in tag names
