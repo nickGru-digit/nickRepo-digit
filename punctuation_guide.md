@@ -28,3 +28,8 @@ Used to separate independent clauses without a conjunction, connect clauses with
 - I'm going to get a divorce; that was his last chance.
 - Thank you for telling me this; however, I think I need some alone time for awhile.
 - He's taken my food from me in Paris, Ohio; Athens, Ohio; Venice, Ohio; and Dublin, Ohio.
+### *Ampersand (&)*
+Used to replace the word 'and,' generally only in places where character count is a concern\
+Must be written as ```&amp;``` in HTML and XML
+- You won't believe it, she's served me papers & is trying to take the dog!
+- LOCAL MAN DIES: COMBINATION OF SANDWICH OVERCONSUMPTION & GUILT
