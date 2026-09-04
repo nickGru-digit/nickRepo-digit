@@ -1,0 +1,513 @@
+body {
+    background: LightCyan;
+    margin: 0px;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: -1px -1px 0 DarkRed,
+                1px -1px 0 LightCyan,
+                -1px 1px 0 LightCyan,
+                1px 1px 0 LightCyan,
+                -1.5px 0px 0 LightCyan,
+                1.5px 0px 0 LightCyan,
+                0px -1.5px 0 LightCyan,
+                0px 1.5px 0 LightCyan;
+    color: rgb(0, 50, 100);
+    background-image: url("images/skeleton (2).gif");
+    background-attachment: fixed;
+    background-size: 20%;
+    animation: scroll 100s linear infinite, cursor 0.75s linear infinite, lock 2.5s forwards;
+}
+
+.bigText
+{
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-shadow: -2px -2px 0 DarkRed,
+                2px -2px 0 LightCyan,
+                -2px 2px 0 LightCyan,
+                2px 2px 0 LightCyan,
+                -3px 0px 0 LightCyan,
+                3px 0px 0 LightCyan,
+                0px -3px 0 LightCyan,
+                0px 3px 0 LightCyan;
+    animation: rotate 10s infinite;
+}
+
+div.header {
+    background: rgb(100, 175, 200, 0.8);
+    border: rgb(85, 135, 160);
+    border-width: 5px;
+    border-style: dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer {
+    background: rgb(100, 175, 200, 0.8);
+    border: rgb(85, 135, 160);
+    border-width: 5px;
+    border-style: dashed;
+    padding-left: 10px;
+    text-align: center;
+}
+
+ul.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul.navbar li {
+    padding: 10px 10px;
+    margin: 10px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 28px;
+    letter-spacing: 0.2em;
+    background-color: rgb(32, 32, 32, 0.2);
+    border-radius: 25px;
+    border: rgb(16, 16, 16, 0.2);
+    border-style: groove;
+    border-width: 5px;
+    flex: 1 1 50px;
+    text-align: center;
+}
+
+ul.navbar li {
+    transition: transform 0.3s cubic-bezier(0.175, 0.7, 0.3, 1.5);
+}
+
+ul.navbar li:hover {
+    transform: scale(1.4);
+    transition: transform 0.3s cubic-bezier(0.175, 0.7, 0.3, 1.5);
+}
+
+ul.navbar li a:hover {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 50, 100);
+}
+
+a:hover {
+    animation: pointer 0.75s linear infinite;
+}
+
+section.box {
+    background: url("images/sparkle.gif");
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px black
+}
+
+.rowbox {
+    background: url("images/sparkle.gif");
+    width: 100%;
+    gap: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+}
+
+div.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+ /*
+.cursor,
+.sword {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: url("images/backupCursor.png");
+    opacity: 0.25;
+    transition: opacity 0.25s ease, transform 0.15s ease;
+} 
+*/
+
+button {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: -1px -1px 0 DarkRed,
+                1px -1px 0 LightCyan,
+                -1px 1px 0 LightCyan,
+                1px 1px 0 LightCyan,
+                -1.5px 0px 0 LightCyan,
+                1.5px 0px 0 LightCyan,
+                0px -1.5px 0 LightCyan,
+                0px 1.5px 0 LightCyan;
+    color: rgb(0, 50, 100);
+}
+
+.loading, .screen, .bezel, .glow, .scan-bar, .splash {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-position: center;
+    pointer-events: none;
+}
+
+.splash {
+    background-image: url("images/splashscreen.gif");
+    background-size: cover;
+    pointer-events: auto;
+    display: flex;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.clippy {
+    background-image: url("images/clippy.gif");
+    bottom: 1vh;
+    right: 2vw;
+    min-width: 150px;
+    min-height: 150px;
+    width: 12vw;
+    height: 12vw;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.clippy.thinking {
+    background-image: url("images/clippythink.gif");
+}
+
+.clippy.pointing {
+    background-image: url("images/clippypoint.gif");
+}
+
+.clippy.waving {
+    background-image: url("images/clippywave.gif");
+}
+
+.clippy.flirting {
+    background-image: url("images/clippyflirt.gif");
+}
+
+.clippy.eyebrows {
+    background-image: url("images/clippyeyebrow.gif");
+}
+
+.speech {
+    background-color: rgb(255, 255, 178);
+    background-position: center;
+    background-size: cover;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    bottom: 175px;
+    right: 100px;
+    width: 300px;
+    height: fit-content;
+    padding: 12px;
+    padding-top: 0px;
+    position: fixed;
+    visibility: hidden;
+    font-size: 24px;
+}
+
+.speech::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 40px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: rgb(255, 255, 178) transparent;
+}
+
+.speech::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 37px;
+    border-width: 18px 18px 0;
+    border-style: solid;
+    border-color: black transparent;
+}
+
+#popup {
+    width: 150vw;
+    height: 150vh;
+    top: calc(0px - 25vh);
+    left: calc(0px - 25vw);
+    position: fixed;
+    background-position: center;
+    background-image: url("images/popup.png");
+    opacity: 0;
+    pointer-events: none;
+    animation: popup 90s 90s infinite;
+}
+
+.loading {
+    background-image: url("images/awesomeshark.gif");
+    animation: disappear 0s 2.3s forwards;
+    background-size: cover;
+    pointer-events: auto;
+}
+
+.loadBar {
+    position: fixed;
+    top: 48vh;
+    left: calc(50vw - 125px);
+    width: 250px;
+    height: 4vh;
+    background-image: url("images/bar.gif");
+    background-size: cover;
+    background-position: center;
+    animation: disappear 0s 2.3s forwards;
+    box-shadow: 0 5px 20px black   
+}
+
+.screen {
+    background-image: url("images/grid.png");
+    background-repeat: repeat;
+    opacity: 0.35;
+    
+}
+.bezel {
+    background-image: url("images/bezel.png");
+    background-size: 100% 100%;
+}
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(transparent 80%, black), radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+    background-size: cover;
+    background-position: center;
+}
+
+.scan-bar {
+    animation: scan 9s infinite;
+}
+
+.scan {
+    height: 100px;
+    pointer-events: none;
+    width: 100%;
+    background-image: radial-gradient(transparent 50%, rgba(130, 130, 160, 0.9));
+}
+
+/*
+.sword.fade {
+    opacity: 0;
+    transform: scale(0.25);
+}
+*/
+
+#jumping {
+    width: 400%;
+    max-width: 600px;
+    border: none;
+}
+
+img.fire {
+    width: 50px;
+    border: none;
+    height: 50px;
+}
+
+img.tramp {
+    width: 45%;
+    padding: 150px;
+    border: none;
+}
+
+img {
+    width: calc(100% - 10px);
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
+}
+
+figure.corpus {
+    flex: 1 1 30%;
+    margin: 0;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 5px black;
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
+    background-image: url("images/sparkle.gif");
+    transition: 0.2s linear;
+}
+
+figure.corpus figcaption {
+    font-size: 0;
+    margin-bottom: 0px;
+}
+
+figure.corpus:hover {
+    transform: scale(1.5);
+    transition: 0.2s linear;
+    box-shadow: 0 5px 20px black;
+}
+
+figure.corpus:hover figcaption {
+    font-size: 16px;
+}
+
+figure.display {
+    background: url("images/sparkle.gif");
+    width: 60%;
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px black;
+}
+
+figcaption {
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+}
+
+iframe.video {
+    width: calc(60vw - 20px);
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
+    height: 29.91vw;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-30%);
+    }
+    33% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes lock {
+    0% {overflow: hidden;}
+    99% {overflow: hidden;}
+    100% {overflow: auto;}
+}
+
+@keyframes scroll {
+    from {
+    background-position: 0 0;
+    }
+    to {
+    background-position : 100% 20%;
+    }
+}
+
+@keyframes popup
+{
+    0% {opacity: 1; pointer-events: auto;}
+    9.99% {opacity: 1; pointer-events: auto;}
+    10% {opacity: 0; pointer-events: none;}
+    99.99% {opacity: 0; pointer-events: none;}
+    100% {opacity: 1; pointer-events: auto;}
+}
+
+@keyframes disappear
+{
+   to {
+       visibility: hidden;
+   }
+}
+
+@keyframes rotate
+{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+    
+}
+
+@keyframes cursor
+{
+    0% {
+        cursor: url("images/cursor1.png"), url("images/backupCursor.png"), auto;
+    }
+    25% {
+        cursor: url("images/cursor2.png"), url("images/backupCursor.png"), auto;
+    }
+    50% {
+        cursor: url("images/cursor3.png"), url("images/backupCursor.png"), auto;
+    }
+    75% {
+        cursor: url("images/cursor4.png"), url("images/backupCursor.png"), auto;
+    }
+    100% {
+        cursor: url("images/cursor5.png"), url("images/backupCursor.png"), auto;
+    }
+}
+
+@keyframes pointer
+{
+    0% {
+        cursor: url("images/pointer1.png"), url("images/backupPointer.png"), auto;
+    }
+    25% {
+        cursor: url("images/pointer2.png"), url("images/backupPointer.png"), auto;
+    }
+    50% {
+        cursor: url("images/pointer3.png"), url("images/backupPointer.png"), auto;
+    }
+    75% {
+        cursor: url("images/pointer4.png"), url("images/backupPointer.png"), auto;
+    }
+    100% {
+        cursor: url("images/pointer5.png"), url("images/backupPointer.png"), auto;
+    }
+}
