@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <sntz num="1"> For the simplest of all slime recipes, all you need is <ing id="cS">cornstarch.
+        </ing>
+    </sntz>
+    <sntz num="2">Just dump <ing key="#cs">some</ing> into a bowl, add some <ing id="w">water,</ing>
+        &amp; start mixing. </sntz>
+    <sntz num="3"> Keep adding <ing key="#w">water</ing> until it reaches the consistency you want
+        (a good place to start is 2 parts <ing key="#cs">cornstarch</ing> to 1 part <ing key="#w"
+            >water</ing>). </sntz>
+    <sntz num="4">You can also add <ing>food coloring</ing> to make it look more legit.</sntz>
+</root>
