@@ -10,7 +10,7 @@ when = attribute when { xsd:gYear }
 
 poem = element poem { element title { attribute level { text }, text }?, lg+ }
 lg = element lg { ln+ }
-ln = element ln {n, mixed { placeName*, place*, motif* } }
+ln = element ln {n, mixed { (placeName | place | motif)* } }
 n = attribute n { xsd:int }
 placeName = element placeName { attribute ref { text }, text }
 place = element place { attribute ref { text }, text }
