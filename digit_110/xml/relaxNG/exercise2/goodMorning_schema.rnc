@@ -1,19 +1,24 @@
 start = xml
 xml = element xml { source, poem }
 
+#metadata
 source = element source { title?, author?, date? }
-title = element title { level, text }
-level = attribute level { text }
 author = element author { text }
 date = element date { when }
 when = attribute when { xsd:gYear }
 
-poem = element poem { element title { attribute level { text }, text }?, lg+ }
+#used for both source and poem
+title = element title { level, text }
+level = attribute level { text }
+
+#text content
+poem = element poem { title?, lg+ }
 lg = element lg { ln+ }
 ln = element ln {n, mixed { (placeName | place | motif)* } }
 n = attribute n { xsd:int }
-placeName = element placeName { attribute ref { text }, text }
-place = element place { attribute ref { text }, text }
+ref = attribute ref { text } #used for both placeName and place
+placeName = element placeName { ref, text }
+place = element place { ref, text }
 motif = element motif { text }
 
 
