@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="relaxng_3_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<piece>
+    <metadata>
+        <author>Langston Hughes</author>
+        <title>BALLAD OF BOOKER T.</title>
+        <encoder>Nick Grundman</encoder>
+        <encodingDesc> All original capitalization, punctuation, and text effects are retained.
+            Symbols such as seals and signatures are done in self-closing tags. If the symbol
+            occupies multiple lines, it will be marked at the top and bottom of those lines.
+        </encodingDesc>
+        <!--Changes from exercise_5:
+            Description moved into encodingDesc.
+            Author added to metadata.
+            'stanza' changed to 'lg'.
+            Lines content changed from self-closing tags to being inside of tags.-->
+    </metadata>
+    <header>
+        <l><effect type="double-underline">BALLAD OF BOOKER T.</effect> by</l>
+        <l>Langston Hughes</l>
+    </header>
+    <body>
+        <lg n="1">
+            <l n="1" r="X">Booker T.</l>
+            <l n="2" r="A">Was a practical man.</l>
+            <l n="3" r="X">He said, Till the soil</l>
+            <l n="4" r="A">And learn from the land.</l>
+        </lg>
+        <lg n="2">
+            <l n="5" r="X">Let down your bucket</l>
+            <symbol class="seal" text="THE LIBRARY OF CONGRESS" ink="red"
+                desc="Bald eagle with American shield holding tassels, olives, 
+                and arrows tucked between the gaps between lines 5-9 on the right"/>
+            <l n="6" r="B">Where you are.</l>
+            <l n="7" r="X">Your fate is here</l>
+            <l n="8" r="B">And not afar.</l>
+        </lg>
+        <lg n="3">
+            <l n="9" r="X">To help yourself</l>
+            <l n="10" r="A">And your fellow man,</l>
+            <l n="11" r="X">Train your head,</l>
+            <l n="12" r="A">Your heart, <effect type="underline">and your hand</effect>.</l>
+        </lg>
+        <lg n="4">
+            <l n="13" r="X">For smartness alone's</l>
+            <l n="14" r="C">Surely not meet—</l>
+            <l n="15" r="X">If you haven't at the same time</l>
+            <l n="16" r="C">Got something to eat.</l>
+        </lg>
+        <lg n="5">
+            <l n="17" r="X">Thus at Tuskegee</l>
+            <l n="18" r="D">He built a school</l>
+            <l n="19" r="X">With book-learning there</l>
+            <l n="20" r="D">And the workman's tool.</l>
+        </lg>
+        <lg n="6">
+            <l n="21" r="X">He started out</l>
+            <l n="22" r="E">In a simple way—</l>
+            <l n="23" r="E">For yesterday</l>
+            <l n="24" r="E">Was <effect type="underline">not</effect> today.</l>
+        </lg>
+        <lg n="7">
+            <l n="25" r="X">Sometimes he had</l>
+            <l n="26" r="F">Compromise in his talk—</l>
+            <l n="27" r="X">For a man must crawl</l>
+            <l n="28" r="F">Before he can walk—</l>
+        </lg>
+        <lg n="8">
+            <l n="29" r="G">And in Alabama in '85</l>
+            <l n="30" r="X">A joker was lucky</l>
+            <l n="31" r="G">To be alive.</l>
+        </lg>
+        <lg n="9">
+            <l n="32" r="X">But Booker T.</l>
+            <l n="33" r="D">Was nobody's fool:</l>
+            <l n="34" r="X">You may carve a dream</l>
+            <l n="35" r="D">With an humble tool.</l>
+        </lg>
+        <lg n="10">
+            <l n="36" r="X">The tallest tower</l>
+            <l n="37" r="H">Can tumble down</l>
+            <l n="38" r="X">If it be not rooted</l>
+            <l n="39" r="H">In solid ground.</l>
+        </lg>
+        <lg n="11">
+            <l n="40" r="X">So, being a far-seeing</l>
+            <l n="41" r="A">Practical man,</l>
+            <l n="42" r="X">He said, Train your head,</l>
+            <l n="43" r="A">Your heart, <effect type="underline">and your hand</effect>.</l>
+        </lg>
+        <lg n="12">
+            <l n="44" r="X">Your fate is here</l>
+            <l n="45" r="B">And not afar,</l>
+            <l n="46" r="X">So let down your bucket</l>
+            <l n="47" r="B">Where you are.</l>
+        </lg>
+    </body>
+    <footer>
+        <symbol class="signature" text="Langston Hughes" ink="black"
+            desc="Cursive full handwritten signature of Langston Hughes overlapping every line in the footer"/>
+        <l>Final draft</l> 
+        <l>Hollow Hills Farm,</l>
+        <l>Monterey, California,</l>
+        <l>June 1, 1941.</l>
+        <symbol class="marker" text="[.te7059]" ink="black"
+            desc="Handwritten marker in the bottom left of the page,
+            presumably unique to this record"/>
+    </footer>
+</piece>

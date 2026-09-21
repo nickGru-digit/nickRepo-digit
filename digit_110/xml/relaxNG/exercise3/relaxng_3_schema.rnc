@@ -1,0 +1,30 @@
+#info added by encoder
+start = piece
+piece = element piece { metadata, header, body, footer }
+metadata = element metadata { (author, title, encoder, encodingDesc)* }
+author = element author { text }
+title = element title { text }
+encoder = element encoder { text }
+encodingDesc = element encodingDesc { text }
+
+#organizational elements
+header = element header { l+ | symbol* }
+body = element body { lg+ }
+footer = element footer { ( l+ | symbol* )* }
+lg = element lg { n, ( l+ | symbol* )* }
+
+#text content and effects written and made by the author
+l = element l { n?, r?, mixed { effect* }}
+n = attribute n { xsd:int }
+r = attribute r { text }
+effect = element effect { type, text }
+type = attribute type { "double-underline" | "underline" | "bold" | "italic" | "strike-through" }
+symbol = element symbol { class, \text, ink, desc, empty }
+class = attribute class { "seal" | "signature" | "marker"  | text}
+\text = attribute \text { text }
+ink = attribute ink { "black" | "red" | "blue" }
+desc = attribute desc { text }
+
+
+
+

@@ -16,7 +16,9 @@ poem = element poem { title?, lg+ }
 lg = element lg { ln+ }
 ln = element ln {n, mixed { (placeName | place | motif)* } }
 n = attribute n { xsd:int }
-ref = attribute ref { text } #used for both placeName and place
+ref = attribute ref { "NYC-Harlem" | "NYC-Man" | "NYC-PennSt" | "PR" 
+| "Cuba" | "Ha" | "Ja" | "NYC" | "Ga" | "Fla" | "La" 
+| "NYC-Harlem" | "NYC-Brook" | "NYC-Bronx" } #used for both placeName and place
 placeName = element placeName { ref, text }
 place = element place { ref, text }
 motif = element motif { text }
