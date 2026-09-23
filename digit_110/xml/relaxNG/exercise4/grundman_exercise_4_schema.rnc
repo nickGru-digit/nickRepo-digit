@@ -1,0 +1,33 @@
+#metadata
+start = song
+song = element song { metadata, lg+ }
+metadata = element metadata { band?, album?, title?, singer*, 
+                   dateProc?, source?, encoder, dateEnc }
+band = element band { text }
+album = element album { text } 
+title = element title { text }
+singer = element singer { text }
+#day and month of any date used may be unknown
+datePattern = (xsd:date | xsd:gYearMonth| xsd:gYear)
+dateProc = element dateProc { datePattern } 
+source = element source { xsd:anyURI }
+encoder = element encoder { text }
+dateEnc = element dateEnc { datePattern }
+
+#line grouping information
+lg = element lg { type, l+ }
+type = attribute type { "verse" | "pre-chorus" | "reprise" | 
+                        "bridge" | "chorus" | "outro" }
+l = element l { n, mixed { (person | foreLang)* } }
+n = attribute n { xsd:int }
+
+#attributes of a person named in the song
+person = element person { xsdid, born, died?, text}
+xsdid = attribute xsdid { text }
+born = attribute born { datePattern }
+died = attribute died { datePattern }
+
+#attributes of a non-English language used in the song
+foreLang = element foreLang { lang, trans, text}
+lang = attribute lang { text }
+trans = attribute trans { text }

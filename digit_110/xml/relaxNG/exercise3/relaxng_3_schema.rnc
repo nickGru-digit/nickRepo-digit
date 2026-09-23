@@ -16,7 +16,8 @@ lg = element lg { n, ( l+ | symbol* )* }
 #text content and effects written and made by the author
 l = element l { n?, r?, mixed { effect* }}
 n = attribute n { xsd:int }
-r = attribute r { text }
+capitalChar = xsd:string { pattern = "[A-Z]" }
+r = attribute r { capitalChar }
 effect = element effect { type, text }
 type = attribute type { "double-underline" | "underline" | "bold" | "italic" | "strike-through" }
 symbol = element symbol { class, \text, ink, desc, empty }
