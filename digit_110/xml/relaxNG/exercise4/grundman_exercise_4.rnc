@@ -2,17 +2,18 @@
 start = song
 song = element song { metadata, lg+ }
 metadata = element metadata { band?, album?, title?, singer*, 
-                   dateProc?, source?, encoder, dateEnc }
+                   dateProc?, source?, encoder, dateEnc, personRef*, langRef*}
 band = element band { text }
 album = element album { text } 
 title = element title { text }
 singer = element singer { text }
-#day and month of any date used may be unknown
-datePattern = (xsd:date | xsd:gYearMonth| xsd:gYear)
+datePattern = (xsd:date | xsd:gYearMonth| xsd:gYear) #day and month of any date used may be unknown
 dateProc = element dateProc { datePattern } 
 source = element source { xsd:anyURI }
 encoder = element encoder { text }
 dateEnc = element dateEnc { datePattern }
+personRef = element personRef { xsdid, born, died?}
+langRef = element langRef { xsdid, lang, trans }
 
 #line grouping information
 lg = element lg { type, l+ }
@@ -21,13 +22,16 @@ type = attribute type { "verse" | "pre-chorus" | "reprise" |
 l = element l { n, mixed { (person | foreLang)* } }
 n = attribute n { xsd:int }
 
+#optional for people and common translations to minimize repetition
+xsdid = attribute xsdid { xsd:ID }
+ref = attribute ref { xsd:IDREF }
+
 #attributes of a person named in the song
-person = element person { xsdid, born, died?, text}
-xsdid = attribute xsdid { text }
+person = element person { ((born, died?) | ref ), text}
 born = attribute born { datePattern }
 died = attribute died { datePattern }
 
 #attributes of a non-English language used in the song
-foreLang = element foreLang { lang, trans, text}
-lang = attribute lang { text }
+foreLang = element foreLang { ((lang, trans) | ref), text}
+lang = attribute lang { "French" | text } #more languages can be added in hypothetical future encodings
 trans = attribute trans { text }

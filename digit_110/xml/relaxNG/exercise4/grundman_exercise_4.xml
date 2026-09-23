@@ -1,0 +1,62 @@
+<?xml-model href="grundman_exercise_4.rnc" type="application/relax-ng-compact-syntax"?>
+<song>
+    <metadata>
+        <band>They Might Be Giants</band>
+        <album>The Spine</album>
+        <title>Au Contraire</title>
+        <singer>John Linnell</singer>
+        <dateProc>2002-08-18</dateProc>
+        <source>https://genius.com/They-might-be-giants-au-contraire-lyrics</source>
+        <encoder>Nick Grundman</encoder>
+        <dateEnc>2026-09-23</dateEnc>
+        <personRef xsdid="d_bowie" born="1947-01-08" died="2016-01-10"/>
+        <personRef xsdid="f_roosevelt" born="1882-01-30" died="1945-04-12"/>
+        <personRef xsdid="m_gandhi" born="1869-10-02" died="1948-01-30"/>
+        <langRef xsdid="a_c" lang="French" trans="on the contrary"/>
+    </metadata>
+    <lg type="verse">
+        <l n="1"><person ref="d_bowie">David Bowie</person> came to town</l>
+        <l n="1">Flying overhead</l>
+        <l n="1">"Don't you dig my chops?" he cried</l>
+        <l n="1">This is what they said</l>
+    </lg>
+    <lg type="chorus">
+        <l n="1"><foreLang ref="a_c">Au contraire</foreLang>, <person ref="d_bowie" >Dave</person></l>
+        <l n="1">Quite the opposite, in fact</l>
+        <l n="1">As it happens, <foreLang ref="a_c">au contraire</foreLang></l>
+        <l n="1"><foreLang ref="a_c">Au contraire</foreLang>, <foreLang lang="French" trans="my brother">mon frère</foreLang></l>
+    </lg>
+    <lg type="verse">
+        <l n="1"><person ref="f_roosevelt">Franklin Delano Roosevelt</person></l>
+        <l n="1">Knew not what to do</l>
+        <l n="1">"This tie clashes with my hat," he cried</l>
+        <l n="1">"Don't you think that's true?"</l>
+    </lg>
+    <lg type="chorus">
+        <l n="1"><foreLang ref="a_c">Au contraire</foreLang>, <person ref="f_roosevelt">Delano</person></l>
+        <l n="1">Hate to rain on your parade</l>
+        <l n="1">As it happens, <foreLang ref="a_c">au contraire</foreLang></l>
+        <l n="1"><foreLang lang="French" trans="On the contrary, my brother">Au contraire, mon frère</foreLang></l>
+    </lg>
+    <lg type="verse">
+        <l n="1"><person born="1962-11-19">Jodie Foster</person> held two pair</l>
+        <l n="1"><person born="1685-03-31" died="1750-07-28">Bach</person> had three of a kind</l>
+        <l n="1"><person ref="m_gandhi">Gandhi</person> said, "With my full house</l>
+        <l n="1">I will blow your mind"</l>
+    </lg>
+    <lg type="chorus">
+        <l n="1"><foreLang ref="a_c">Au contraire</foreLang>, <person ref="m_gandhi">Mahatma</person></l>
+        <l n="1">Hate to contradict you, but</l>
+        <l n="1">As it happens, <foreLang ref="a_c">au contraire</foreLang></l>
+        <l n="1"><foreLang ref="a_c">Au contraire</foreLang>, yes, <foreLang ref="a_c">au contraire</foreLang></l>
+    </lg>
+    <lg type="chorus">
+        <l n="1">And <foreLang ref="a_c">au contraire</foreLang>, you square</l>
+        <l n="1">Wash that notion from your hair</l>
+        <l n="1">If you're still there, I must declare:</l>
+        <l n="1"><foreLang lang="French" trans="On the contrary, my very good brother">Au contraire, mon très bon frère</foreLang></l>
+    </lg>
+    <lg type="outro">
+        <l n="1">Right on!</l>
+    </lg>
+</song>
