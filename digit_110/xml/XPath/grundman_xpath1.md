@@ -1,14 +1,25 @@
-# CBML XPath Questions
-1. First, let's explore the CBML document in the Outline view in oXygen. (If you can't see the Outline view, go to Window >> Show View >> Outline.) Notice how the document is organized. Can you find the elements that hold a whole page, or "panel group" of the comic? The elements share this structure: ```xml <div type="panelGrp">```. Write an XPath expression that finds all the elements that hold panel groups in this file.\
-    a.//div[@type="panelGrp"]
-2. Use the expression that you wrote to answer 1, and "step down the tree" to find all the panels. Record your XPath expression. Notice that you need to use the cbml: prefix here. That is because these elements for panels are inside the CBML namespace.\
-    a.//div[@type="panelGrp"]/cbml:panel
-3. Let's try narrowing down the results with an XPath predicate, written with [ ] in your expression.\
-    a. //div[@type="panelGrp"][2]\
-    b. //div[@type="panelGrp"][2]/cbml:panel\
-    c. This returns 2 results
-4. Let's explore finding attributes. As you explore the XML, notice how characters are marked in the panels.\
-    a. Write an XPath expression that returns all the values of the @characters attribute.\
-        a.1. //div[@type="panelGrp"][2]/cbml:panel[@characters]\
-    b. How many results do you see?\ 
-        b.1 There are 2 results\
+# XPath Exercise 1 Answers
+**1.** First, let's explore the CBML document in the Outline view in oXygen. (If you can't see the Outline view, go to Window >> Show View >> Outline.) Notice how the document is organized. Can you find the elements that hold a whole page, or "panel group" of the comic? The elements share this structure: ``` <div type="panelGrp">```. Write an XPath expression that finds all the elements that hold panel groups in this file.\
+&emsp;***a:*** ```//div[@type="panelGrp"]```\
+**2.** Use the expression that you wrote to answer 1, and "step down the tree" to find all the panels. Record your XPath expression. Notice that you need to use the cbml: prefix here. That is because these elements for panels are inside the CBML namespace.\
+&emsp;*a:* ```//div[@type="panelGrp"]/cbml:panel```\
+**3.** Let's try narrowing down the results with an XPath predicate, written with [ ] in your expression.\
+&emsp;*a:* ```//div[@type="panelGrp"][2]```\
+&emsp;*b:* ```//div[@type="panelGrp"][2]/cbml:panel```\
+&emsp;*c:* ```2 results```\
+**4.** Let's explore finding attributes. As you explore the XML, notice how characters are marked in the panels.\
+&emsp;***q.1:*** Write an XPath expression that returns all the values of the @characters attribute.\
+&emsp;&emsp;***a.1:*** ```//div[@type="panelGrp"][2]/cbml:panel[@characters]```\
+&emsp;***q.2:*** How many results do you see?\
+&emsp;&emsp;***a.1:*** ```2 results```\
+**5.** Okay, usually we work with attributes to help filter elements. Let's say we want to find all the panels in which only the narrator is represented? Use an XPath predicate with [ ] to help return the panels that are only representing the narrator.\
+&emsp;***a:*** ```//div[@type="panelGrp"][2]/cbml:panel[@characters eq "#narrator"]```\
+**6.** The ```<floatingText>``` element in CBML is a pretty exciting application of the TEI. It lets you nest a whole new "document" inside any level of the text you want. How are these useful in CBML? Let's take a look at them?\
+&emsp;***q.1:*** How many ```<floatingText>``` elements do you see?\
+&emsp;&emsp;***a.1:*** ```41 elements```\
+&emsp;***q.2:*** What kind of content do you think is being described here? (Take a guess if you're not sure--I know you can't see the whole comic.)\
+&emsp;&emsp;***a.2:*** ```I think it's text outside of speech bubbles, like a label on a briefcase```\
+&emsp;***q.3:"*** How many panel elements contain floatingText elements? Write an XPath expression that uses a predicate [ ] to return only the <cbml:panel> elements that have a ```<floatingText>``` element inside.\
+&emsp;&emsp;***a.3:*** Using ```//cbml:panel[floatingText]```, 26 panels contain floatingText\
+&emsp;***q.4:*** You can see the number of results in the return window, but let's try adding a function to your expression. Try applying the count() function to return a count of the number of panels that include floatingText.\
+&emsp;&emsp;***a.4:*** ```count(//cbml:panel[floatingText])```
