@@ -4,9 +4,12 @@
 **2.** Use the expression that you wrote to answer 1, and "step down the tree" to find all the panels. Record your XPath expression. Notice that you need to use the cbml: prefix here. That is because these elements for panels are inside the CBML namespace.\
 &emsp;*a:* ```//div[@type="panelGrp"]/cbml:panel```\
 **3.** Let's try narrowing down the results with an XPath predicate, written with [ ] in your expression.\
-&emsp;*a:* ```//div[@type="panelGrp"][2]```\
-&emsp;*b:* ```//div[@type="panelGrp"][2]/cbml:panel```\
-&emsp;*c:* ```2 results```\
+&emsp;***q.1:*** Write an XPath that will return only the second panel group (literally the second whole page) in the document. You can use a position marker: [2]\
+&emsp;&emsp;***a.1:*** ```//div[@type="panelGrp"][2]```\
+&emsp;***q.2:*** Now, build on that expression to return only the <cbml:panel> elements inside that second panel group.\
+&emsp;&emsp;***a.2:*** ```//div[@type="panelGrp"][2]/cbml:panel```\
+&emsp;***q.3:*** How many results do you return?\
+&emsp;&emsp;***a.3:*** ```2 results```\
 **4.** Let's explore finding attributes. As you explore the XML, notice how characters are marked in the panels.\
 &emsp;***q.1:*** Write an XPath expression that returns all the values of the @characters attribute.\
 &emsp;&emsp;***a.1:*** ```//div[@type="panelGrp"][2]/cbml:panel[@characters]```\
