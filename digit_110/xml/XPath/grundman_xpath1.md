@@ -28,17 +28,17 @@
 **4.** Let's explore finding attributes. As you explore the XML, notice how characters are marked in the panels.\
 &emsp;&emsp;***4.1:*** Write an XPath expression that returns all the values of the @characters attribute.
 ```sql
-//div[@type="panelGrp"][2]/cbml:panel[@characters]
+//div[@type="panelGrp"]/cbml:panel[@characters]
 ```
 \
 &emsp;&emsp;***4.2:*** How many results do you see?
 ```
-2 results
+53 results
 ```
 \
 **5.** Okay, usually we work with attributes to help filter elements. Let's say we want to find all the panels in which only the narrator is represented? Use an XPath predicate with [ ] to help return the panels that are only representing the narrator.
 ```sql
-//div[@type="panelGrp"][2]/cbml:panel[@characters eq "#narrator"]
+//div[@type="panelGrp"]/cbml:panel[@characters eq "#narrator"]
 ```
 \
 **6.** The ```<floatingText>``` element in CBML is a pretty exciting application of the TEI. It lets you nest a whole new "document" inside any level of the text you want. How are these useful in CBML? Let's take a look at them?\
@@ -59,5 +59,5 @@ Using //cbml:panel[floatingText], 26 panels contain floatingText
 \
 &emsp;&emsp;***6.4:*** You can see the number of results in the return window, but let's try adding a function to your expression. Try applying the count() function to return a count of the number of panels that include floatingText.
 ```sql
-count(//cbml:panel[floatingText])
+//cbml:panel[floatingText] => count()
 ```
