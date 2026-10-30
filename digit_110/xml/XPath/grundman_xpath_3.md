@@ -1,11 +1,11 @@
 # XPath Exercise 3 Answers
 **1.**
-```sql
+```xml
 a. //div/count(*) counts the number of items directly in each div
 b. //div/*/count(*) counts the number of items inside each element in each div
 ```
 **2.**
-```sql
+```xml
 a. max(//div/*/count(*))
 returns 1112
 
@@ -13,19 +13,19 @@ b. min(//div/*/count(*))
 returns 3
 ```
 **3.**
-```sql
+```xml
 a. //div/*[count(./*) eq 1112]
 returns histPersons
 b. **(CHALLENGE)** //div/*[count(./*) eq max(//div/*/count(*))]
 ```
 **4.**
-```sql
+```xml
 a. distinct-values(//occupation/@type)
 b. count(distinct-values(//occupation/@type))
 returns 15 distinct occupations
 ```
 **5.**
-```sql
+```xml
 a. //occupation[@type="artist"]
 b. //occupation[@type="artist"]/..
 c. //occupation[@type="artist"]/..[@sex="f"]
@@ -37,7 +37,7 @@ g. (//occupation[@subtype="engraver"]/.. ! birth/@when => sort())[1]
 1667 is the earliest year an engraver mentioned in the text was born
 ```
 **6.**
-```sql
+```xml
 a. //div/descendant::* ! name()
 returns 42095 items
 b. //div/descendant::* ! name() => distinct-values() => count()
