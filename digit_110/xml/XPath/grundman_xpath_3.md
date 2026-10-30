@@ -42,5 +42,4 @@ a. //div/descendant::* ! name()
 returns 42095 items
 b. //div/descendant::* ! name() => distinct-values() => count()
 returns 55 distinct names
-
 ```
