@@ -20,10 +20,10 @@ This also returns 5, but I had to tokenize it to get it to count instances where
 ```ruby
 a. //cbml:balloon ! string-length() => max()
 There are 71 different balloons! The longest one is 215 characters
-b. //cbml:balloon[string-length() = //cbml:balloon ! string-length() => max()]
-Doctor Kelly gives the longest speech
-c. //cbml:balloon[string-length() = //cbml:balloon ! string-length() => min()]
-Kaliman gives the shortest with only 5 characters
+b. //cbml:balloon[string-length() = //cbml:balloon ! string-length() => max()]/@who
+Kaliman gives the longest speech
+c. //cbml:balloon[string-length() = //cbml:balloon ! string-length() => min()]/@who
+Kaliman also gives the shortest speech, with only 5 characters
 ```
 **5.**
 ```ruby
