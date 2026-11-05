@@ -4,32 +4,64 @@
     xmlns:math="http://www.w3.org/2005/xpath-functions/math"
     exclude-result-prefixes="xs math"
     version="3.0">
-        <xsl:output method="xhtml" html-version="5" omit-xml-declaration="yes" 
-        include-content-type="no" indent="yes"/>
-    <xsl:strip-space elements="day month year"/>
-    <xsl:preserve-space elements="p li name"/>
     
     <xsl:mode on-no-match="shallow-copy"/>
     
-    <xsl:template match="sonnets">
-       <xml>
-           <dateProcessed>
-               <xsl:value-of select="current-dateTime()"/>
-           </dateProcessed>
-           <xsl:apply-templates/>
-       </xml> 
+    <!--Tasks: Write XSLT template rules to do the following:
+        
+        
+     1. Change the <poemTitle> elements to <title>.
+     
+     2. We don't need the <body> elements, so let's remove them but preserve their contents
+     
+     The next questions ask you to write Attribute Value templates to pull in a value, or calculate a value from the source XML.
+    READ ABOUT/LOOK AT EXAMPLES OF ATTRIBUTE VALUE TEMPLATES HERE:
+     http://dh.obdurodon.org/avt.xhtml
+     
+    3. Write a template that matches the <pb> elements: Write an AVT to change the name of the @pNum to @n on those elements.
+     
+    4. Change the <line> elements into self-closing <lb/> elements to sit at the beginning of each line. 
+    Can you also put an @n attribute on each line to number the lines inside the poem? 
+    (You can calculate this with XPath by counting the **preceding** line elements in the document and adding 1. 
+    Hint: Take a look at the difference if you count(preceding::line) as opposed to count(preceding-sibling::line). How does the
+    count change?)
+    
+    5. Each poem should have a distinct identifier, usually called an @xml:id attribute.
+    Write an attribute value template to add an xml:id attribute to each poem that includes "p-" followed by its number in the sequence of poem elements. 
+    (As before, you can calculate this with XPath by counting the preceding poem elements and adding 1.)
+    
+    -->
+    <!--#1-->
+    <xsl:template match="poemTitle">
+        <title>
+            <xsl:apply-templates/>
+        </title> 
     </xsl:template>
     
-    <xsl:template match="sonnet">
-        <poem type="sonnet" roman="{@number}" n="{1 + count(preceding-sibling::sonnet)}">
+    <!--#2-->
+    <xsl:template match="body">
+            <xsl:apply-templates/>
+    </xsl:template>
+    
+    <!--#3-->
+    <xsl:template match="pb">
+        <pb n="{@pNum}">
+            <xsl:apply-templates/>
+        </pb>
+    </xsl:template>
+    
+    <!--#4-->
+    <xsl:template match="line">
+        <lb n="{1 + count(preceding::line)}"/>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <!--#5-->
+    <xsl:template match="poem">
+        <poem xml:id="{concat('p-', (1 + count(preceding::poem)))}">
             <xsl:apply-templates/>
         </poem>
     </xsl:template>
-    
-    <xsl:template match="line">
-        <ln n="{1 + count(preceding::line)}">
-            <xsl:apply-templates/>
-        </ln>
-    </xsl:template>
-    
+   
+   
 </xsl:stylesheet>
